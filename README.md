@@ -36,21 +36,8 @@ importGeom      true
 Standard observables (e.g., volume profile, shell volumes for Hausdorff dimension) are in `observables/`. Add them in `main.cpp` as shown in the example. Custom observables can leverage `Universe` (access to `Vertex` and `Tetra` objects, including neighbor lists) and `Observable` methods (e.g., metric spheres, dual distances).
 
 ## Optimization Plan (2025)
-This fork is being upgraded over 12 months to boost performance and enable new physics insights using HPC (OpenMP, MPI, GPU) and ML:
 
 ### Timeline
-- **Months 1-2 (Feb-Mar 2025)**: Profile with `gprof`/VTune, collect ML training data (e.g., move acceptance rates, observables like shell volumes).
-- **Months 3-4 (Apr-May 2025)**: Add OpenMP for parallel Monte Carlo sweeps, integrate RL (e.g., DQN) to optimize moves (e.g., flip, shift, Sec. 2.3).
-- **Months 5-6 (Jun-Jul 2025)**: Optimize `Pool/Bag` memory structures, use ML to predict observables (e.g., volume profiles).
-- **Months 7-8 (Aug-Sep 2025)**: Implement MPI for distributed simulations, scale ML training/inference across nodes.
-- **Months 9-10 (Oct-Nov 2025)**: Port moves to GPU (CUDA), extend to 4D CDT with ML-guided simulations.
-- **Months 11-12 (Dec 2025-Jan 2026)**: Combine OpenMP/MPI/GPU for hybrid runs, analyze 4D physics (e.g., phase transitions, curvature).
-
-### Goals
-- **Performance**: Target 10-100x speedup, scaling to \(N_3 = 10^6\) and 4D \(N_4 = 10^7\).
-- **ML**: Enhance move efficiency, predict observables, detect phase transitions (e.g., Sec. 2.3).
-- **Physics**: Enable large-scale 4D CDT simulations for Planck-scale quantum gravity insights.
-- **Repo**: Updated fork at `https://github.com/noahbean33/3d-cdt` with code, documentation, and results.
 
 ## Citation
 If you use or extend this codebase, please cite the original work:
